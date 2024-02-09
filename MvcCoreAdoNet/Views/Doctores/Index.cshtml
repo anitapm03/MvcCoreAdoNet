@@ -3,11 +3,16 @@
 
 <h1>Index Doctores</h1>
 
-@*<p>
-    <a asp-controller="Doctores" asp-action="Create">
-        Añadir doctor
+<p>
+    <a asp-controller="Doctores" asp-action="DoctoresEspecialidad">
+        ModelDoctores ESPECIALIDAD
     </a>
-</p>*@
+</p>
+<p>
+    <a asp-controller="Doctores" asp-action="DoctoresEspecialidadViewData">
+        ModelDoctores ESPECIALIDAD ViewData
+    </a>
+</p>
 
 @if (Model != null)
 {

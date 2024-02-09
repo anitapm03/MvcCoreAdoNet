@@ -1,0 +1,39 @@
+﻿@model ModelDoctores
+
+<h1>Especialidades con ModelDoctores</h1>
+
+@if (Model != null)
+{
+    <form method="post">
+        <label>Especialidad:</label>
+        <select name="especialidad" class="form-control">
+            @foreach (string esp in Model.Especialidades){
+                <option>@esp</option>
+            }
+        </select>
+        <br>
+        <button class="btn btn-dark">Buscar!</button>
+    </form>
+    <br />
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Apellido</th>
+                <th>Especialidad</th>
+                <th>Salario</th>
+                <th>Hospital</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Doctor d in Model.Doctores)
+            {
+                <tr>
+                    <td>@d.Apellido</td>
+                    <td>@d.Especialidad</td>
+                    <td>@d.Salario</td>
+                    <td>@d.IdHospital</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

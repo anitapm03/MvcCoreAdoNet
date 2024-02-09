@@ -70,5 +70,25 @@ namespace MvcCoreAdoNet.Repositories
             this.cn.Close();
             return doctoresEspecialidad;
         }
+    
+        public List<string> GetEspecialidades()
+        {
+            string sql = "SELECT DISTINCT ESPECIALIDAD FROM DOCTOR";
+            this.com.CommandType = System.Data.CommandType.Text;
+            this.com.CommandText = sql;
+
+            this.cn.Open();
+            this.reader = this.com.ExecuteReader();
+            List<string> especialidades = new List<string>();
+            while (this.reader.Read())
+            {
+                string e = this.reader["ESPECIALIDAD"].ToString();
+                especialidades.Add(e);
+            }
+            this.reader.Close();
+            this.cn.Close();
+            return especialidades;
+        }
+    
     }
 }
