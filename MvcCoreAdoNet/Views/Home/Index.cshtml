@@ -1,0 +1,23 @@
+﻿<h1>Index</h1>
+<br />
+<button id="botonIndex" class="btn btn-outline-dark">
+    Mensajito
+</button>
+<br />
+<h2 style="color:blue" id="mensaje">.</h2>
+
+
+@section scripts {
+    <script>
+
+        $(document).ready(function () {
+
+            $("#botonIndex").click(function(){
+
+                $("#mensaje").text("Holo");
+
+            })
+        })
+
+    </script>
+}

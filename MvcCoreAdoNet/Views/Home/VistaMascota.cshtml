@@ -1,0 +1,32 @@
+﻿@model List<Mascota>
+
+<h1>Vista de mascota</h1>
+
+@*<h3>
+    Nombre: @Model.Nombre <br />
+    Edad: @Model.Edad <br />
+    Raza: @Model.Raza
+</h3>*@
+
+@if (Model != null)
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Raza</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Mascota fila in Model)
+            {
+                <tr>
+                    <td>@fila.Nombre</td>
+                    <td>@fila.Raza</td>
+                    <td>@fila.Edad</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

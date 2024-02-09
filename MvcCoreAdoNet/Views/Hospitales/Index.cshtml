@@ -1,0 +1,48 @@
+﻿@model List<Hospital>
+
+<h1>Index hospitales</h1>
+
+<p>
+    <a asp-controller="Hospitales" asp-action="Create">
+        Añadir hospital
+    </a>
+</p>
+
+@if (Model != null)
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Direccion</th>
+                <th>Telefono</th>
+                <th>Camas</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Hospital h in Model)
+            {
+                <tr>
+                    <td>@h.Nombre</td>
+                    <td>@h.Direccion</td>
+                    <td>@h.Telefono</td>
+                    <td>@h.Camas</td>
+                    <td>
+                        @Html.ActionLink("Detalles", "Details", 
+                        "Hospitales", new {idhospital = h.IdHospital})
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit",
+                        "Hospitales", new {idhospital = h.IdHospital})
+                    </td>
+                    <td>
+                        @Html.ActionLink("Eliminar", "Index",
+                            "Hospitales", new {eliminar = h.IdHospital})
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -1,0 +1,56 @@
+﻿
+@model List<Doctor>
+
+<h1>Index Doctores</h1>
+
+@*<p>
+    <a asp-controller="Doctores" asp-action="Create">
+        Añadir doctor
+    </a>
+</p>*@
+
+@if (Model != null)
+{
+    <form method="post">
+        <label>Especialidad:</label>
+        <input type="text" name="especialidad" class="form-control" />
+        <br>
+        <button class="btn btn-dark">Buscar!</button>
+    </form>
+    <br />
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Apellido</th>
+                <th>Especialidad</th>
+                <th>Salario</th>
+                <th>Hospital</th>
+                @*<th></th>
+                <th></th>*@
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Doctor d in Model)
+            {
+                <tr>
+                    <td>@d.Apellido</td>
+                    <td>@d.Especialidad</td>
+                    <td>@d.Salario</td>
+                    <td>@d.IdHospital</td>
+                    @*<td>
+                        @Html.ActionLink("Detalles", "Details",
+                "Doctores", new {iddoctor = d.IdDoctor})
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit",
+                "Doctores", new {iddoctor = d.IdDoctor})
+                    </td>
+                    <td>
+                        @Html.ActionLink("Eliminar", "Index",
+                "Doctores", new {eliminar = d.IdDoctor})
+                    </td>*@
+                </tr>
+            }
+        </tbody>
+    </table>
+}

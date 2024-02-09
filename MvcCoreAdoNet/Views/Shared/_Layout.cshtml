@@ -1,0 +1,52 @@
+﻿<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    
+    <meta charset="utf-8">
+    <title>Layout</title>
+
+    <link href="~/css/pricing.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    
+  </head>
+  <body>
+    
+    <div class="container py-3">
+      <header>
+        <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+     
+          <nav class="d-inline-flex ">
+            <a asp-controller="Home" asp-action="Index" class="nav-link" >
+                Index Home
+            </a>
+
+            <a asp-controller="Home" asp-action="VistaMascota" class="nav-link" >
+                Mascota
+            </a>
+
+            <a asp-controller="Hospitales" asp-action="Index" class="nav-link" >
+                Index Hospitales
+            </a>
+
+            <a asp-controller="Doctores" asp-action="Index" class="nav-link" >
+                Index Doctores
+            </a>
+        
+          </nav>
+        </div>
+    
+      </header>
+
+      <main>
+
+          @RenderBody()
+
+      </main>
+
+    </div>
+        <script src="~/js/jquery-3.7.1.min.js"></script>
+        <script src="~/js/bootstrap.bundle.min.js"></script>
+        @RenderSection("scripts", false)
+        
+  </body>
+</html>

@@ -1,0 +1,16 @@
+﻿@model Hospital
+<h1 style="color:red">Detalles</h1>
+
+<p>
+    <a asp-controller="Hospitales" asp-action="Index">
+        Volver
+    </a>
+</p>
+
+<dl>
+    <dt>Nombre: @Model.Nombre</dt>
+    <dd>ID: @Model.IdHospital</dd>
+    <dd>Direccion: @Model.Direccion</dd>
+    <dd>Telefono: @Model.Telefono</dd>
+    <dd>Numero de camas: @Model.Camas</dd>
+</dl>
